@@ -5,33 +5,22 @@ public class App {
     public static void main(String[] args) {
         ApplicationContext applicationContext =
                 new AnnotationConfigApplicationContext(AppConfig.class);
-        HelloWorld bean =
-                (HelloWorld) applicationContext.getBean("helloworld");
-        System.out.println(bean.getMessage());
-
-        ApplicationContext applicationContext1 =
-                new AnnotationConfigApplicationContext(AppConfig.class);
+        HelloWorld bean = (HelloWorld) applicationContext.getBean("helloworld");
+//        System.out.println(bean.getMessage());
         HelloWorld bean1 =
                 (HelloWorld) applicationContext.getBean("helloworld");
-        System.out.println(bean1.getMessage());
+//        System.out.println(bean1.getMessage());
         System.out.println(bean == bean1);
 
 
 
 
-        ApplicationContext applicationContext2 =
-                new AnnotationConfigApplicationContext(AppConfig.class);
-        Cat bean2 =
+        Cat beanCat =
                 (Cat) applicationContext.getBean("cat");
-        System.out.println(bean2.getCats());
-
-        ApplicationContext applicationContext3 =
-                new AnnotationConfigApplicationContext(AppConfig.class);
-        Cat bean3 =
+//        System.out.println(beanCat.getCats());
+        Cat beanCat2 =
                 (Cat) applicationContext.getBean("cat");
-        System.out.println(bean3.getCats());
-
-
-        System.out.println(bean2 == bean3);
+//        System.out.println(beanCat2.getCats());
+        System.out.println(beanCat == beanCat2);
     }
 }
